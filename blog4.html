@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal portfolio of Sagar Hipparagi - B.Tech Student @ UVCE'27">
+    <meta name="description" content="ML Misconceptions - Sagar Hipparagi">
     <meta name="author" content="Sagar Hipparagi">
-    <title>Sagar Hipparagi - B.Tech @ UVCE'27</title>
+    <title>Why Increasing Epochs Didn't Help - Sagar Hipparagi</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <script>
@@ -18,18 +18,78 @@
             document.documentElement.setAttribute('data-theme', 'dark');
         }
     </script>
+    <style>
+        .blog-content {
+            margin-top: 40px;
+        }
+
+        .blog-header-main {
+            margin-bottom: 24px;
+        }
+
+        .blog-title-container {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .blog-number-main {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-color);
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .blog-title-main {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-color);
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .blog-subtitle-main {
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .blog-section {
+            margin-bottom: 32px;
+        }
+
+        .blog-section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 12px;
+        }
+
+        .blog-section-content {
+            font-size: 17px;
+            font-weight: 400;
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+    </style>
 </head>
 
 <body>
     <!-- Header -->
     <header>
         <div class="avatar">
-            <svg width="64" height="64" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="16" cy="16" r="15" stroke="#111111" stroke-width="2" />
-                <circle cx="16" cy="13" r="5" fill="#111111" />
-                <path d="M6 28C6 22 10 18 16 18C22 18 26 22 26 28" stroke="#111111" stroke-width="2"
-                    stroke-linecap="round" />
-            </svg>
+            <a href="index.html">
+                <svg width="64" height="64" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="16" cy="16" r="15" stroke="#111111" stroke-width="2" />
+                    <circle cx="16" cy="13" r="5" fill="#111111" />
+                    <path d="M6 28C6 22 10 18 16 18C22 18 26 22 26 28" stroke="#111111" stroke-width="2"
+                        stroke-linecap="round" />
+                </svg>
+            </a>
         </div>
 
         <nav>
@@ -48,13 +108,44 @@
     <!-- Main Content -->
     <main>
         <section class="hero">
-            <p class="greeting">Hello, I'm</p>
-            <h1 class="name">Sagar Hipparagi</h1>
-            <div class="divider"></div>
-            <p class="role">B.Tech Student @ UVCE'27</p>
-            <p class="bio">I'm passionate about building intelligent systems and exploring the frontiers of machine
-                learning and artificial intelligence. Currently pursuing my Bachelor's in Technology, I focus on
-                developing practical ML solutions and sharing my insights through technical writing.</p>
+            <div class="blog-header-main">
+                <div class="blog-title-container">
+                    <span class="blog-number-main">4.</span>
+                    <h1 class="blog-title-main">ML Misconceptions</h1>
+                </div>
+                <p class="blog-subtitle-main">"Why Increasing Epochs Didn't Help"</p>
+            </div>
+
+            <div class="blog-content">
+                <div class="blog-section">
+                    <h3 class="blog-section-title">Misconception (state it plainly):</h3>
+                    <p class="blog-section-content">More training epochs do not guarantee better learning.</p>
+                </div>
+
+                <div class="blog-section">
+                    <h3 class="blog-section-title">Observation (from experience):</h3>
+                    <p class="blog-section-content">Beyond a point, additional epochs reinforced noise rather than
+                        structure.</p>
+                </div>
+
+                <div class="blog-section">
+                    <h3 class="blog-section-title">Why it happened (technical but readable):</h3>
+                    <p class="blog-section-content">The model had already captured the dominant patterns. Further
+                        training exaggerated spurious correlations introduced by label noise.</p>
+                </div>
+
+                <div class="blog-section">
+                    <h3 class="blog-section-title">What didn't fix it (important):</h3>
+                    <p class="blog-section-content">Regularization and tuning helped marginally, but the root issue was
+                        data quality, not training duration.</p>
+                </div>
+
+                <div class="blog-section">
+                    <h3 class="blog-section-title">Lesson (generalizable):</h3>
+                    <p class="blog-section-content">Training longer is often a response to uncertainty, not a solution
+                        to it.</p>
+                </div>
+            </div>
         </section>
     </main>
 

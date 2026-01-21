@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Test</title>
+    <style>
+        :root {
+            --bg-color: #FFFFFF;
+            --text-color: #111111;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #111111;
+            --text-color: #FFFFFF;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            transition: all 0.3s ease;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        // Load theme immediately
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Dark Mode Test</h1>
+    <p>Current theme: <span id="current-theme">light</span></p>
+    <button id="toggle">Toggle Dark Mode</button>
+
+    <script>
+        const toggle = document.getElementById('toggle');
+        const currentSpan = document.getElementById('current-theme');
+
+        // Update display
+        function updateDisplay() {
+            const theme = document.documentElement.getAttribute('data-theme') || 'light';
+            currentSpan.textContent = theme;
+        }
+
+        updateDisplay();
+
+        toggle.addEventListener('click', function () {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme') || 'light';
+            const newTheme = current === 'dark' ? 'light' : 'dark';
+
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateDisplay();
+
+            console.log('Theme changed to:', newTheme);
+        });
+    </script>
+</body>
+
+</html>

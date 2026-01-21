@@ -1,9 +1,30 @@
 /**
- * Minimal JavaScript for Portfolio Landing Page
- * Apple HIG-inspired - minimal interactions only
+ * Dark Mode Toggle
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+// Wait for DOM to be ready
+document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.getElementById('dark-mode-toggle');
+
+    if (!toggle) {
+        console.error('Toggle button not found!');
+        return;
+    }
+
+    console.log('Dark mode toggle initialized');
+
+    // Handle click
+    toggle.addEventListener('click', function () {
+        const html = document.documentElement;
+        const current = html.getAttribute('data-theme');
+        const newTheme = current === 'dark' ? 'light' : 'dark';
+
+        console.log('Toggling from', current, 'to', newTheme);
+
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+
     // Smooth scroll for navigation links
     const navLinks = document.querySelectorAll('nav a');
 

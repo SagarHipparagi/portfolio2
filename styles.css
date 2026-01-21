@@ -13,16 +13,49 @@ html {
 }
 
 /* ===========================
+   Color Theme Variables
+   =========================== */
+
+:root {
+    --bg-color: #FFFFFF;
+    --text-color: #111111;
+    --text-secondary: #555555;
+    --divider-color: #E5E5E5;
+    --footer-bg: rgba(255, 255, 255, 0.9);
+    --footer-border: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] {
+    --bg-color: #111111;
+    --text-color: #FFFFFF;
+    --text-secondary: #AAAAAA;
+    --divider-color: #333333;
+    --footer-bg: rgba(17, 17, 17, 0.9);
+    --footer-border: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .avatar svg circle,
+[data-theme="dark"] .avatar svg path {
+    stroke: #FFFFFF;
+    fill: #FFFFFF;
+}
+
+[data-theme="dark"] footer svg path {
+    fill: #FFFFFF;
+}
+
+/* ===========================
    Typography System
    =========================== */
 
 body {
     font-family: "Helvetica NowDisplay", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #FFFFFF;
-    color: #111111;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1,
@@ -71,6 +104,34 @@ header {
 }
 
 /* ===========================
+   Dark Mode Toggle
+   =========================== */
+
+#dark-mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.15s ease;
+}
+
+#dark-mode-toggle:hover {
+    opacity: 0.6;
+}
+
+#dark-mode-toggle svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--text-color);
+    fill: none;
+    transition: stroke 0.3s ease;
+}
+
+/* ===========================
    Navigation
    =========================== */
 
@@ -84,7 +145,7 @@ nav {
 nav a {
     font-size: 16px;
     font-weight: 400;
-    color: #111111;
+    color: var(--text-color);
     text-decoration: none;
     letter-spacing: -0.01em;
     transition: opacity 0.15s ease;
@@ -98,7 +159,7 @@ nav a:hover {
 }
 
 .nav-divider {
-    color: #E5E5E5;
+    color: var(--divider-color);
     font-weight: 300;
 }
 
@@ -137,7 +198,7 @@ main {
 .name {
     font-size: 48px;
     font-weight: 700;
-    color: #111111;
+    color: var(--text-color);
     margin-bottom: 24px;
     letter-spacing: -0.02em;
     line-height: 1.1;
@@ -147,14 +208,14 @@ main {
     width: 100%;
     /* Full width divider */
     height: 1px;
-    background-color: #E5E5E5;
+    background-color: var(--divider-color);
     margin-bottom: 24px;
 }
 
 .role {
     font-size: 16px;
     font-weight: 400;
-    color: #555555;
+    color: var(--text-secondary);
     /* Slightly lighter for subtext */
     margin-bottom: 16px;
     letter-spacing: -0.01em;
@@ -164,7 +225,7 @@ main {
 .bio {
     font-size: 16px;
     font-weight: 400;
-    color: #111111;
+    color: var(--text-color);
     line-height: 1.6;
     letter-spacing: -0.005em;
     max-width: 100%;
@@ -179,7 +240,7 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--footer-bg);
     /* Translucent background */
     backdrop-filter: blur(10px);
     /* Glassmorphism effect */
@@ -189,7 +250,8 @@ footer {
     gap: 24px;
     justify-content: center;
     z-index: 1000;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: 1px solid var(--footer-border);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 footer a {

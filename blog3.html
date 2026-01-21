@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal portfolio of Sagar Hipparagi - B.Tech Student @ UVCE'27">
+    <meta name="description" content="Project Deep-Dive - Sagar Hipparagi">
     <meta name="author" content="Sagar Hipparagi">
-    <title>Sagar Hipparagi - B.Tech @ UVCE'27</title>
+    <title>Design Decisions Behind My Image Classification Project - Sagar Hipparagi</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <script>
@@ -18,18 +18,91 @@
             document.documentElement.setAttribute('data-theme', 'dark');
         }
     </script>
+    <style>
+        .blog-content {
+            margin-top: 40px;
+        }
+
+        .blog-header-main {
+            margin-bottom: 24px;
+        }
+
+        .blog-title-container {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .blog-number-main {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-color);
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .blog-title-main {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-color);
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .blog-subtitle-main {
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--text-secondary);
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .blog-section {
+            margin-bottom: 32px;
+        }
+
+        .blog-section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 12px;
+        }
+
+        .blog-section-content {
+            font-size: 17px;
+            font-weight: 400;
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        .blog-list {
+            margin-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .blog-list li {
+            font-size: 17px;
+            font-weight: 400;
+            color: var(--text-color);
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+    </style>
 </head>
 
 <body>
     <!-- Header -->
     <header>
         <div class="avatar">
-            <svg width="64" height="64" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="16" cy="16" r="15" stroke="#111111" stroke-width="2" />
-                <circle cx="16" cy="13" r="5" fill="#111111" />
-                <path d="M6 28C6 22 10 18 16 18C22 18 26 22 26 28" stroke="#111111" stroke-width="2"
-                    stroke-linecap="round" />
-            </svg>
+            <a href="index.html">
+                <svg width="64" height="64" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="16" cy="16" r="15" stroke="#111111" stroke-width="2" />
+                    <circle cx="16" cy="13" r="5" fill="#111111" />
+                    <path d="M6 28C6 22 10 18 16 18C22 18 26 22 26 28" stroke="#111111" stroke-width="2"
+                        stroke-linecap="round" />
+                </svg>
+            </a>
         </div>
 
         <nav>
@@ -48,13 +121,49 @@
     <!-- Main Content -->
     <main>
         <section class="hero">
-            <p class="greeting">Hello, I'm</p>
-            <h1 class="name">Sagar Hipparagi</h1>
-            <div class="divider"></div>
-            <p class="role">B.Tech Student @ UVCE'27</p>
-            <p class="bio">I'm passionate about building intelligent systems and exploring the frontiers of machine
-                learning and artificial intelligence. Currently pursuing my Bachelor's in Technology, I focus on
-                developing practical ML solutions and sharing my insights through technical writing.</p>
+            <div class="blog-header-main">
+                <div class="blog-title-container">
+                    <span class="blog-number-main">3.</span>
+                    <h1 class="blog-title-main">Project Deep-Dive (NOT a tutorial)</h1>
+                </div>
+                <p class="blog-subtitle-main">"Design Decisions Behind My Image Classification Project"</p>
+            </div>
+
+            <div class="blog-content">
+                <div class="blog-section">
+                    <h3 class="blog-section-title">Context (one paragraph max):</h3>
+                    <p class="blog-section-content">This project began as a standard image classification task, but most
+                        of the final performance came from decisions unrelated to model architecture.</p>
+                </div>
+
+                <div class="blog-section">
+                    <h3 class="blog-section-title">Key decisions (bullet or sections):</h3>
+                    <ul class="blog-list">
+                        <li>Choice of baseline before deep models</li>
+                        <li>Data preprocessing trade-offs</li>
+                        <li>Why certain augmentations were removed</li>
+                    </ul>
+                </div>
+
+                <div class="blog-section">
+                    <h3 class="blog-section-title">Rejected ideas (important):</h3>
+                    <p class="blog-section-content">I initially experimented with a deeper architecture, but it
+                        increased variance without improving generalization. The added complexity made debugging harder
+                        without measurable benefit.</p>
+                </div>
+
+                <div class="blog-section">
+                    <h3 class="blog-section-title">Constraints (realistic):</h3>
+                    <p class="blog-section-content">Limited data volume and noisy labels forced prioritization of
+                        robustness over peak performance.</p>
+                </div>
+
+                <div class="blog-section">
+                    <h3 class="blog-section-title">Reflection:</h3>
+                    <p class="blog-section-content">The final system improved not because of sophistication, but because
+                        unnecessary complexity was removed.</p>
+                </div>
+            </div>
         </section>
     </main>
 
