@@ -39,7 +39,7 @@ h6 {
    =========================== */
 
 body {
-    padding: 64px 20px;
+    padding: 64px 20px 100px;
     max-width: 900px;
     margin: 0 auto;
     display: flex;
@@ -175,13 +175,21 @@ main {
    =========================== */
 
 footer {
-    position: static;
-    margin-top: auto;
-    padding-top: 64px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Translucent background */
+    backdrop-filter: blur(10px);
+    /* Glassmorphism effect */
+    padding: 24px 0;
     display: flex;
     align-items: center;
     gap: 24px;
     justify-content: center;
+    z-index: 1000;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 footer a {
@@ -274,7 +282,7 @@ footer svg {
     }
 
     footer {
-        padding-top: 48px;
+        padding: 16px 0;
         gap: 20px;
     }
 }
