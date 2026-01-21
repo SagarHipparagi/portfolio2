@@ -17,7 +17,7 @@ html {
    =========================== */
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica NowDisplay", "Helvetica Neue", Helvetica, Arial, sans-serif;
     background-color: #FFFFFF;
     color: #111111;
     line-height: 1.6;
@@ -31,7 +31,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica NowDisplay", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* ===========================
@@ -128,7 +128,7 @@ main {
 
 .greeting {
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 500;
     color: #111111;
     margin-bottom: 8px;
     letter-spacing: -0.01em;
@@ -136,7 +136,7 @@ main {
 
 .name {
     font-size: 48px;
-    font-weight: 500;
+    font-weight: 700;
     color: #111111;
     margin-bottom: 24px;
     letter-spacing: -0.02em;
@@ -163,7 +163,7 @@ main {
 
 .bio {
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
     color: #111111;
     line-height: 1.6;
     letter-spacing: -0.005em;
