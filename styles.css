@@ -1,0 +1,344 @@
+/* ===========================
+   CSS Reset & Base Styles
+   =========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===========================
+   Typography System
+   =========================== */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #FFFFFF;
+    color: #111111;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* ===========================
+   Layout
+   =========================== */
+
+body {
+    padding: 64px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ===========================
+   Avatar & Header
+   =========================== */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.avatar {
+    margin-bottom: 0;
+}
+
+.avatar svg {
+    display: block;
+    width: 48px;
+    height: 48px;
+}
+
+/* ===========================
+   Navigation
+   =========================== */
+
+nav {
+    position: static;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+nav a {
+    font-size: 16px;
+    font-weight: 400;
+    color: #111111;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition: opacity 0.15s ease;
+}
+
+nav a:hover {
+    opacity: 0.6;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+}
+
+.nav-divider {
+    color: #E5E5E5;
+    font-weight: 300;
+}
+
+/* ===========================
+   Main Content
+   =========================== */
+
+main {
+    margin-top: 0;
+    margin-left: 0;
+    width: 100%;
+    display: block;
+    /* Reset flex centering */
+}
+
+/* ===========================
+   Hero Section
+   =========================== */
+
+.hero {
+    max-width: 100%;
+    text-align: left;
+    /* Left align content */
+    display: block;
+    /* Reset flex column */
+}
+
+.greeting {
+    font-size: 16px;
+    font-weight: 400;
+    color: #111111;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+}
+
+.name {
+    font-size: 48px;
+    font-weight: 500;
+    color: #111111;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.divider {
+    width: 100%;
+    /* Full width divider */
+    height: 1px;
+    background-color: #E5E5E5;
+    margin-bottom: 24px;
+}
+
+.role {
+    font-size: 16px;
+    font-weight: 400;
+    color: #555555;
+    /* Slightly lighter for subtext */
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+    line-height: 1.5;
+}
+
+.bio {
+    font-size: 16px;
+    font-weight: 300;
+    color: #111111;
+    line-height: 1.6;
+    letter-spacing: -0.005em;
+    max-width: 100%;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+
+footer {
+    position: static;
+    margin-top: auto;
+    padding-top: 64px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    justify-content: center;
+}
+
+footer a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.15s ease;
+}
+
+footer a:hover {
+    opacity: 0.5;
+}
+
+footer svg {
+    display: block;
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    body {
+        padding: 48px 40px;
+    }
+
+    .avatar {
+        top: 48px;
+        left: 48px;
+    }
+
+    nav {
+        top: 48px;
+        right: 48px;
+    }
+
+    .name {
+        font-size: 56px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    body {
+        padding: 40px 24px;
+        padding-bottom: 60px;
+    }
+
+    /* Keep absolute positioning for mobile header */
+    .avatar {
+        top: 32px;
+        left: 24px;
+    }
+
+    nav {
+        position: absolute;
+        top: 32px;
+        right: 24px;
+        margin-bottom: 0;
+        justify-content: flex-end;
+        width: auto;
+    }
+
+    main {
+        margin-top: 80px;
+    }
+
+    .greeting {
+        font-size: 16px;
+    }
+
+    .name {
+        font-size: 48px;
+        margin-bottom: 24px;
+    }
+
+    .divider {
+        margin-bottom: 24px;
+    }
+
+    .role {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .bio {
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+    footer {
+        padding-top: 48px;
+        gap: 20px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    body {
+        padding: 32px 20px;
+    }
+
+    .avatar {
+        top: 24px;
+        left: 20px;
+    }
+
+    .avatar svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    nav {
+        top: 24px;
+        right: 20px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    main {
+        margin-top: 64px;
+    }
+
+    .greeting {
+        font-size: 15px;
+        margin-bottom: 10px;
+    }
+
+    .name {
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .divider {
+        width: 40px;
+        margin-bottom: 20px;
+    }
+
+    .role {
+        font-size: 17px;
+        margin-bottom: 18px;
+    }
+
+    .bio {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    footer {
+        gap: 18px;
+    }
+
+    footer svg {
+        width: 16px;
+        height: 16px;
+    }
+}
