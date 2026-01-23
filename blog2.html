@@ -110,42 +110,55 @@
         <section class="hero">
             <div class="blog-header-main">
                 <div class="blog-title-container">
-                    <span class="blog-number-main">2.</span>
+                    <span class="blog-number-main">1.</span>
                     <h1 class="blog-title-main">Thought Piece</h1>
                 </div>
                 <p class="blog-subtitle-main">"Why I Don't Trust Accuracy as a Primary Metric"</p>
             </div>
 
             <div class="blog-content">
-                <div class="blog-section">
-                    <h3 class="blog-section-title">Claim (clear and opinionated):</h3>
-                    <p class="blog-section-content">Accuracy is often the least informative metric for real-world
-                        machine learning systems.</p>
-                </div>
+                <p class="blog-section-content">When I started learning machine learning, accuracy felt like the main
+                    thing that mattered. Higher accuracy meant a better model — simple.</p>
 
-                <div class="blog-section">
-                    <h3 class="blog-section-title">Reasoning (not emotional):</h3>
-                    <p class="blog-section-content">It assumes symmetric costs for errors and stable class distributions
-                        — assumptions that rarely hold outside controlled datasets.</p>
-                </div>
+                <p class="blog-section-content">But after working on real datasets, I realized accuracy is often the
+                    most misleading metric.</p>
 
-                <div class="blog-section">
-                    <h3 class="blog-section-title">Concrete example (light, not tutorial):</h3>
-                    <p class="blog-section-content">In one project, a model with high accuracy consistently failed the
-                        cases that mattered most. Optimizing accuracy made the system worse, not better.</p>
-                </div>
+                <p class="blog-section-content">The problem is that accuracy assumes all mistakes are equally important.
+                    It treats a false positive and a false negative as the same.</p>
 
-                <div class="blog-section">
-                    <h3 class="blog-section-title">Counterpoint (shows balance):</h3>
-                    <p class="blog-section-content">Accuracy isn't useless — it's just insufficient. It works when class
-                        balance and error costs are aligned, which is the exception, not the rule.</p>
-                </div>
+                <p class="blog-section-content">In real engineering systems, that is almost never true.</p>
 
-                <div class="blog-section">
-                    <h3 class="blog-section-title">Conclusion (tight):</h3>
-                    <p class="blog-section-content">Metrics should reflect consequences, not convenience. Accuracy
-                        optimizes comfort, not correctness.</p>
-                </div>
+                <p class="blog-section-content">For example, in an electrical fault detection system, missing an actual
+                    fault is much more dangerous than raising one false alarm. But accuracy doesn't capture that
+                    difference.</p>
+
+                <p class="blog-section-content">I once worked on a classification problem where the model showed around
+                    95% accuracy. At first, it looked great.</p>
+
+                <p class="blog-section-content">But later I noticed something serious:</p>
+
+                <p class="blog-section-content">The model was failing mostly on the rare cases — the ones that actually
+                    mattered.</p>
+
+                <p class="blog-section-content">Most of the dataset was made up of "normal" samples, so the model could
+                    get high accuracy just by predicting normal every time.</p>
+
+                <p class="blog-section-content">So optimizing for accuracy actually made the system worse, because it
+                    ignored the critical minority cases.</p>
+
+                <p class="blog-section-content">That doesn't mean accuracy is useless.</p>
+
+                <p class="blog-section-content">If the dataset is balanced and the cost of errors is similar, accuracy
+                    can be a decent starting point.</p>
+
+                <p class="blog-section-content">But in most real-world applications — especially in engineering domains
+                    like healthcare, power systems, fraud detection or safety monitoring — accuracy alone gives a false
+                    sense of confidence.</p>
+
+                <p class="blog-section-content">A good metric should reflect impact, not just percentage.</p>
+
+                <p class="blog-section-content">Accuracy is convenient, but real systems need correctness where it
+                    matters.</p>
             </div>
         </section>
     </main>
