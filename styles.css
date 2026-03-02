@@ -1,4 +1,24 @@
 /* ===========================
+   Theme Variables
+   =========================== */
+
+:root {
+    --bg: #FFFFFF;
+    --text: #111111;
+    --text-muted: #555555;
+    --divider: #E5E5E5;
+    --nav-divider: #E5E5E5;
+}
+
+[data-theme="dark"] {
+    --bg: #111111;
+    --text: #F5F5F5;
+    --text-muted: #AAAAAA;
+    --divider: #2A2A2A;
+    --nav-divider: #444444;
+}
+
+/* ===========================
    CSS Reset & Base Styles
    =========================== */
 
@@ -18,11 +38,12 @@ html {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #FFFFFF;
-    color: #111111;
+    background-color: var(--bg);
+    color: var(--text);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1,
@@ -84,7 +105,7 @@ nav {
 nav a {
     font-size: 16px;
     font-weight: 400;
-    color: #111111;
+    color: var(--text);
     text-decoration: none;
     letter-spacing: -0.01em;
     transition: opacity 0.15s ease;
@@ -98,8 +119,26 @@ nav a:hover {
 }
 
 .nav-divider {
-    color: #E5E5E5;
+    color: var(--nav-divider);
     font-weight: 300;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    opacity: 0.7;
+    transition: opacity 0.15s ease;
+    border-radius: 50%;
+}
+
+#theme-toggle:hover {
+    opacity: 1;
 }
 
 /* ===========================
@@ -129,7 +168,7 @@ main {
 .greeting {
     font-size: 16px;
     font-weight: 400;
-    color: #111111;
+    color: var(--text);
     margin-bottom: 8px;
     letter-spacing: -0.01em;
 }
@@ -137,7 +176,7 @@ main {
 .name {
     font-size: 48px;
     font-weight: 500;
-    color: #111111;
+    color: var(--text);
     margin-bottom: 24px;
     letter-spacing: -0.02em;
     line-height: 1.1;
@@ -145,17 +184,15 @@ main {
 
 .divider {
     width: 100%;
-    /* Full width divider */
     height: 1px;
-    background-color: #E5E5E5;
+    background-color: var(--divider);
     margin-bottom: 24px;
 }
 
 .role {
     font-size: 16px;
     font-weight: 400;
-    color: #555555;
-    /* Slightly lighter for subtext */
+    color: var(--text-muted);
     margin-bottom: 16px;
     letter-spacing: -0.01em;
     line-height: 1.5;
@@ -164,7 +201,7 @@ main {
 .bio {
     font-size: 16px;
     font-weight: 300;
-    color: #111111;
+    color: var(--text);
     line-height: 1.6;
     letter-spacing: -0.005em;
     max-width: 100%;
@@ -189,6 +226,7 @@ footer a {
     align-items: center;
     justify-content: center;
     transition: opacity 0.15s ease;
+    color: var(--text);
 }
 
 footer a:hover {
@@ -197,6 +235,7 @@ footer a:hover {
 
 footer svg {
     display: block;
+    fill: var(--text);
 }
 
 /* ===========================
